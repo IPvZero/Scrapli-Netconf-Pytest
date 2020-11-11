@@ -3,15 +3,16 @@ from xml.dom import minidom
 
 
 def get_state(task):
-    result = task.run(task=netconf_get, filter_= "//ospf-neighbor", filter_type="xpath")
+    result = task.run(task=netconf_get, filter_="//ospf-neighbor", filter_type="xpath")
     resulter = result.result
     neighbors = minidom.parseString(resulter).getElementsByTagName("state")
     for neighbor in neighbors:
         state = neighbor.firstChild.nodeValue
         return state
 
+
 def count_neighbors(task):
-    result = task.run(task=netconf_get, filter_= "//ospf-neighbor", filter_type="xpath")
+    result = task.run(task=netconf_get, filter_="//ospf-neighbor", filter_type="xpath")
     resulter = result.result
     neighbors = minidom.parseString(resulter).getElementsByTagName("neighbor-id")
     num_neighbors = len(neighbors)
