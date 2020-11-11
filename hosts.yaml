@@ -1,0 +1,16 @@
+---
+CSR1:
+  hostname: "192.168.31.101"
+  username: "john"
+  password: "cisco"
+  port: 830
+  groups:
+    - cisco_group
+
+CSR2:
+  hostname: "192.168.31.102"
+  username: "john"
+  password: "cisco"
+  port: 830
+  groups:
+    - cisco_group
